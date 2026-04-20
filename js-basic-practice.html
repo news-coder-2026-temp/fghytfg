@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JS基础知识练习</title>
+    <style>
+        body { font-family: "微软雅黑", sans-serif; padding: 20px; line-height: 1.6; }
+        .log { background: #f5f5f5; padding: 15px; border-radius: 8px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript 基础知识练习</h1>
+    <div class="log" id="logArea"></div>
+
+    <script>
+        // 工具函数：在页面上打印日志
+        function printLog(text) {
+            const logArea = document.getElementById('logArea');
+            logArea.innerHTML += '<p>' + text + '</p >';
+        }
+
+        // --------------------------
+        // 1. 变量定义与变量类型
+        // --------------------------
+        printLog("=== 1. 变量定义与变量类型 ===");
+        let name = "小明";
+        const age = 20;
+        let isStudent = true;
+        let score = null;
+        let hobby;
+
+        printLog("变量name的值："+name+"，类型："+typeof name);
+        printLog("变量age的值："+age+"，类型："+typeof age);
+        printLog("变量isStudent的值："+isStudent+"，类型："+typeof isStudent);
+        printLog("变量score的值："+score+"，类型："+typeof score);
+        printLog("变量hobby的值："+hobby+"，类型："+typeof hobby);
+
+        // --------------------------
+        // 2. 表达式与运算
+        // --------------------------
+        printLog("<br>=== 2. 表达式与运算 ===");
+        let num1 = 10;
+        let num2 = 3;
+        printLog("num1 = "+num1+", num2 = "+num2);
+        printLog("加法："+num1+" + "+num2+" = "+(num1 + num2));
+        printLog("减法："+num1+" - "+num2+" = "+(num1 - num2));
+        printLog("乘法："+num1+" × "+num2+" = "+(num1 * num2));
+        printLog("除法："+num1+" ÷ "+num2+" = "+(num1 / num2));
+        printLog("取模："+num1+" % "+num2+" = "+(num1 % num2));
+        printLog("num1 > num2 结果："+(num1 > num2));
+
+        // --------------------------
+        // 3. 流程控制：条件判断
+        // --------------------------
+        printLog("<br>=== 3. 流程控制：条件判断 ===");
+        if (age >= 18) {
+            printLog("年龄"+age+"岁，已成年");
+        } else {
+            printLog("年龄"+age+"岁，未成年");
+        }
+
+        let grade = 85;
+        let level;
+        if (grade >= 90) {
+            level = "优秀";
+        } else if (grade >= 60) {
+            level = "及格";
+        } else {
+            level = "不及格";
+        }
+        printLog("成绩"+grade+"分，等级："+level);
+
+        // --------------------------
+        // 4. 流程控制：循环
+        // --------------------------
+        printLog("<br>=== 4. 流程控制：循环 ===");
+        printLog("for循环输出1-5：");
+        for (let i = 1; i <= 5; i++) {
+            printLog(i);
+        }
+
+        printLog("while循环倒计时3秒：");
+        let count = 3;
+        while (count > 0) {
+            printLog(count);
+            count--;
+        }
+
+        // --------------------------
+        // 5. 函数定义与调用
+        // --------------------------
+        printLog("<br>=== 5. 函数定义与调用 ===");
+        // 普通函数
+        function add(a, b) {
+            return a + b;
+        }
+        printLog("add(5, 3) = "+add(5, 3));
+
+        // 带条件的函数
+        function checkEven(num) {
+            return num % 2 === 0 ? "偶数" : "奇数";
+        }
+        printLog("数字7是："+checkEven(7));
+        printLog("数字10是："+checkEven(10));
+
+        printLog("<br>✅ 所有JS基础练习已完成！");
+    </script>
+</body>
+</html>
